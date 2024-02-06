@@ -14,12 +14,12 @@ import {
   templateUrl: './moment-form.component.html',
   styleUrl: './moment-form.component.css',
 })
-export class MomentFormComponent implements OnInit {
+export class MomentFormComponent {
   @Input() btnText!: string;
 
   momentForm!: FormGroup;
 
-  ngOnInit(): void {
+  constructor() {
     this.momentForm = new FormGroup({
       id: new FormControl(''),
       title: new FormControl('', [Validators.required]),
