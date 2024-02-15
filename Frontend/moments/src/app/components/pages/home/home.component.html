@@ -1,5 +1,11 @@
 <div class="home-container">
   <h1>Veja oque estão compartilhando</h1>
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]='faSearch'></fa-icon>
+      <input type="text" placeholder='Ou busque por um momento...' (input)='search($event)'>
+    </form>
+  </div>
   <div class="moments-container">
     @for (moment of moments; track moment.id) {
     <div class="moment">
