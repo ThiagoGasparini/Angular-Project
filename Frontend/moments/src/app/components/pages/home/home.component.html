@@ -1,9 +1,19 @@
 <div class="home-container">
   <h1>Veja oque estão compartilhando</h1>
-  @for (moment of moments; track moment.id) {
-    <h2>{{ moment.title }}</h2>
-  } @empty {
-    Nenhum momento compartilhado!!!
-  }
-
+  <div class="moments-container">
+    @for (moment of moments; track moment.id) {
+    <div class="moment">
+      <img
+        src="{{ baseApiUrl }}uploads/{{ moment.image }}"
+        alt="{{ moment.title }}"
+      />
+      <h3>{{ moment.title }}</h3>
+      <p class="date">Em: {{ moment.created_at }}</p>
+      <p>Comentários: {{ moment.comments!.length }}</p>
+      <p><a routerLink='moments/{{ moment.id }}'>Detalhes</a></p>
+    </div>
+    } @empty {
+    <h1>Nenhum momento compartilhado!!!</h1>
+    }
+  </div>
 </div>
