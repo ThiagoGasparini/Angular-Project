@@ -1,1 +1,9 @@
-<p>Página da Home</p>
+<div class="home-container">
+  <h1>Veja oque estão compartilhando</h1>
+  @for (moment of moments; track moment.id) {
+    <h2>{{ moment.title }}</h2>
+  } @empty {
+    Nenhum momento compartilhado!!!
+  }
+
+</div>
